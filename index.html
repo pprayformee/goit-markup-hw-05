@@ -37,7 +37,7 @@
     <main>
         <section class="hero section-1">
             <h1 class="text-1">Ефективні рішення для вашого бізнесу</h1>
-            <button class="button" type="button">Замовити послугу</button>
+            <button class="button" type="button" data-modal-open>Замовити послугу</button>
         </section>
         <section class="section-2">
           <div class="container">
@@ -86,9 +86,30 @@
           <div class="container">
             <h2 class="title title-section-3">Чим ми займаємося</h2>
             <ul class="list3">
-                <li class="item"><img src="./img/images/comp.jpg" alt="img" width="370" class="img"></li>
-                <li class="item"><img src="./img/images/mous.jpg" alt="img" width="370" class="img"></li>
-                <li class="item"><img src="./img/images/tel.jpg" alt="img" width="370" class="img"></li>
+                <li class="item">
+                  <div class="container-img">
+                    <img src="./img/images/comp.jpg" alt="img" width="370" class="img">
+                    <div class="label">
+                      <p class="text-label">Десктопні додатки</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="container-img">
+                    <img src="./img/images/tel.jpg" alt="img" width="370" class="img">
+                    <div class="label">
+                      <p class="text-label">Мобільні додатки</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="container-img">
+                    <img src="./img/images/mous.jpg" alt="img" width="370" class="img">
+                    <div class="label">
+                      <p class="text-label">Дизайнерські рішення</p>
+                    </div>
+                  </div>
+                </li>
             </ul>
           </div>
         </section>
@@ -344,5 +365,16 @@
       </div>
       </div>
     </footer>
+    <!--Main window-->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn" type="button" data-modal-close>
+          <svg width="11px" height="11px">
+            <use href="./img/svg/icons.svg#Vector"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>  

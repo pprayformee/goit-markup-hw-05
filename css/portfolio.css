@@ -14,6 +14,8 @@
     /* sizes */
     --title-size: 36px;
     --text-size: 14px;
+    /*Animation color*/
+    --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 ul {
@@ -91,6 +93,7 @@ p {
     font-weight: 500;
     font-size: var(--text-size);
     line-height: 1.14;
+    transition: color var(--animation);
 }
 
 .studio:hover,
@@ -104,11 +107,22 @@ p {
     font-weight: 500;
     font-size: var(--text-size);
     line-height: 1.14;
+    transition: color var(--animation);
 }
 
 .portfolio:hover,
 .portfolio:focus {
     color: var(--acent-color);
+}
+
+.item .portfolio::after {
+    content: "";
+    display: block;
+    border-bottom: 4px solid rgba(33, 150, 243, 1);
+    width: 75px;
+    border-radius: 2px;
+    position: absolute;
+    top: 80px;
 }
 
 .contacts {
@@ -117,6 +131,7 @@ p {
     font-weight: 500;
     font-size: var(--text-size);
     line-height: 1.14;
+    transition: color var(--animation);
 }
 
 .contacts:hover,
@@ -136,6 +151,7 @@ p {
 .envelope {
     fill: var(--secondary-color);
     margin-right: 10px;
+    transition: fill var(--animation);
 }
 
 .envelope:hover,
@@ -163,6 +179,7 @@ p {
     font-weight: 500;
     font-size: var(--text-size);
     line-height: 1.14;
+    transition: color var(--animation);
 }
 
 .mail:hover,
@@ -170,17 +187,10 @@ p {
     color: var(--acent-color);
 }
 
-.phone {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: var(--text-size);
-    line-height: 1.14;
-}
-
 .smartphone {
     fill: var(--secondary-color);
     margin-right: 10px;
+    transition: fill var(--animation);
 }
 
 .smartphone:hover,
@@ -190,6 +200,15 @@ p {
 
 .smartphone {
     fill: currentColor;
+}
+
+.phone {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--text-size);
+    line-height: 1.14;
+    transition: color var(--animation);
 }
 
 .phone:hover,
@@ -235,6 +254,7 @@ p {
     line-height: 1.62;
     cursor: pointer;
     padding: 6px 22px;
+    transition: color var(--animation), background-color var(--animation);
 }
 
 .button:hover,
@@ -255,10 +275,6 @@ p {
     margin-bottom: 30px;
 }
 
-.li-container:hover {
-    box-shadow: 1px 4px 6px rgba(29, 3, 3, 0.16), 0px 4px 4px rgba(0, 0, 0, 0,06), 0px 1px 1px rgba(0, 0, 0, 0.12);
-}
-
 .li-container:nth-child(3n) {
     margin-right: 0;
 }
@@ -268,7 +284,52 @@ p {
 }
 
 .link {
+    display: block;
     text-decoration: none;
+    transition: box-shadow var(--animation);
+}
+
+.link:hover,
+.link:focus {
+    box-shadow: 1px 4px 6px rgba(29, 3, 3, 0.16),
+        0px 4px 4px rgba(0, 0, 0, 0, 06),
+        0px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: transform var(--animation);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 63px 24px;
+    background-color: rgba(33, 150, 243, 0.9);
+}
+
+
+
+.link:hover .overlay,
+.link:focus .overlay {
+    transform: translateY(0);
+}
+
+.overlay-desc {
+    color: rgba(255, 255, 255, 1);
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
 }
 
 .img {
@@ -305,6 +366,7 @@ p {
 
 .cont {
     display: flex;
+    gap: 70px;
     align-items: baseline;
 }
 
@@ -340,6 +402,7 @@ p {
     text-decoration: none;
     font-size: var(--text-size);
     line-height: 1.71;
+    transition: color var(--animation);
 }
 
 .map:hover,
@@ -352,6 +415,7 @@ p {
     text-decoration: none;
     font-size: var(--text-size);
     line-height: 1.71;
+    transition: color var(--animation);
 }
 
 .mailto:hover,
@@ -359,11 +423,16 @@ p {
     color: var(--acent-color);
 }
 
+.container-social-footer {
+    padding-top: 12px;
+}
+
 .tell {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     font-size: var(--text-size);
     line-height: 1.71;
+    transition: color var(--animation);
 }
 
 .tell:hover,
@@ -398,6 +467,7 @@ p {
     border-radius: 50%;
     fill: var(--white-color);
     background-color: rgba(117, 117, 117, 0.3);
+    transition: background-color var(--animation);
 }
 
 .link-social-footer:hover,
