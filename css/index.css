@@ -571,6 +571,7 @@ p {
     border-radius: 50%;
     fill: var(--white-color);
     background-color: rgba(117, 117, 117, 0.3);
+    transition: fill var(--animation), background-color var(--animation);
 }
 
 .link-social-footer:hover,
